@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Page</title>
+  <style>
+    #secret {
+      display: none;
+      color: darkred;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hello, World!</h1>
+  <p>I'm learning HTML and JavaScript!</p>
+
+  <a href="https://www.google.com">Visit Google</a>
+  <br>
+  <img src="https://placekitten.com/200/300" alt="Cute Kitten">
+  <br><br>
+
+  <!-- First Button -->
+  <button onclick="showMessage()">Click me!</button>
+
+  <!-- Secret Section -->
+  <h1>Welcome to My Secret Page</h1>
+  <button onclick="revealSecret()">Reveal Secret</button>
+  <p id="secret">You have a powerful future in tech. 💻✨</p>
+
+  <!-- JavaScript -->
+  <script>
+    function showMessage() {
+      alert("You clicked the button! 🎉");
+    }
+
+    function revealSecret() {
+      document.getElementById("secret").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
