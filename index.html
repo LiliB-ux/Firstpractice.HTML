@@ -2,25 +2,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My First Page</title>
+  <title>My Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* All your CSS here – same as before, no changes needed */
-    /* ... (your existing CSS is fine and included here) ... */
+    body {
+      background-color: #f9f2ff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 30px;
+      color: #333;
+    }
 
-    /* Truncated here to save space in this message, but keep your full CSS */
+    h1 {
+      color: #4b0082;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      border: 3px solid hotpink;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #b30059;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #99004d;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .project {
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .project:hover {
+      transform: scale(1.03);
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #b30059;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff0f5;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      font-family: inherit;
+    }
+
+    .contact-form button {
+      margin-top: 15px;
+      background-color: #b30059;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #99004d;
+    }
+
+    #typewriter {
+      font-family: 'Courier New', monospace;
+      border-right: 2px solid #333;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink-caret 0.7s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    #secret {
+      display: none;
+      color: rgb(140, 0, 0);
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark-mode a {
+      color: #66ccff;
+    }
+
+    .dark-mode .project {
+      background-color: #1e1e1e;
+      border-color: #444;
+    }
+
+    @media screen and (max-width: 600px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .contact-form {
+        width: 100%;
+        padding: 15px;
+      }
+
+      button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
   </style>
 </head>
 <body>
-
   <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 
-  <h1>Hello, World!</h1>
+  <h1>Hello, I'm Lili 👋</h1>
 
   <h2>About Me</h2>
   <p id="typewriter"></p>
-
-  <a href="project.html">🔗 View My Projects</a>
 
   <h2>My Projects</h2>
   <div class="gallery">
@@ -29,7 +194,6 @@
       <p>A fun interactive page that reveals a message!</p>
       <a href="index.html" target="_blank">View Project</a>
     </div>
-
     <div class="project">
       <h3>Coming Soon</h3>
       <p>More exciting projects are on the way ✨</p>
@@ -37,51 +201,36 @@
   </div>
 
   <hr>
+
   <h2>Contact Me</h2>
   <form class="contact-form">
-    <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
 
-    <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
 
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
 
     <button type="submit">Send Message</button>
   </form>
 
   <hr>
 
-  <a href="https://www.google.com" target="_blank">Visit Google</a>
-  <br>
-  <img src="https://placekitten.com/200/300" alt="Cute Kitten">
-  <br><br>
-
-  <button onclick="showMessage()">Click me!</button>
-
-  <hr>
-
-  <h2>Secret Project</h2>
-  <h3>Welcome to My Secret Page</h3>
+  <h2>Secret Message</h2>
   <button onclick="revealSecret()">Reveal Secret</button>
   <p id="secret">You have a powerful future in tech. 💻✨</p>
 
-  <!-- JavaScript -->
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
-    }
-
-    function showMessage() {
-      alert("You clicked the button! 🎉");
     }
 
     function revealSecret() {
       document.getElementById("secret").style.display = "block";
     }
 
-    // Typewriter animation
     const txt = "Hi! I’m Lili — a curious and creative mind currently learning web development. I have a background in health sciences and a passion for technology 💻✨";
     let i = 0;
 
@@ -95,6 +244,5 @@
 
     window.onload = typeWriter;
   </script>
-
 </body>
 </html>
