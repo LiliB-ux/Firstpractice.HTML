@@ -1,78 +1,50 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lili's Portfolio</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lili's Portfolio</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background-color: #f9f2ff;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 30px;
       color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4b0082;
+      color: white;
+      padding: 20px 0;
     }
 
     nav {
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
-    .tab-button {
+    nav button {
+      padding: 10px 20px;
+      margin: 5px;
       background-color: #b30059;
       color: white;
       border: none;
-      padding: 10px 15px;
-      margin: 5px;
-      border-radius: 8px;
+      border-radius: 5px;
       cursor: pointer;
     }
 
-    .tab-button:hover {
+    nav button:hover {
       background-color: #99004d;
     }
 
     .tab-content {
       display: none;
-      animation: fadeIn 0.5s ease-in-out;
+      padding: 20px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    h1 {
-      color: #4b0082;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    img {
-      border: 3px solid hotpink;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #b30059;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 10px;
-    }
-
-    button:hover {
-      background-color: #99004d;
+    .active {
+      display: block;
     }
 
     .gallery {
@@ -90,23 +62,6 @@
       padding: 20px;
       width: 250px;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-
-    .project:hover {
-      transform: scale(1.03);
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #b30059;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
     }
 
     .contact-form {
@@ -148,89 +103,26 @@
     .contact-form button:hover {
       background-color: #99004d;
     }
-
-    .dark-mode {
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-
-    .dark-mode a {
-      color: #66ccff;
-    }
-
-    .dark-mode .project {
-      background-color: #1e1e1e;
-      border-color: #444;
-    }
-
-    @media screen and (max-width: 600px) {
-      body {
-        padding: 15px;
-        font-size: 16px;
-      }
-
-      h1, h2 {
-        font-size: 22px;
-      }
-
-      img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
-
-      .gallery {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .project {
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .contact-form {
-        width: 100%;
-        padding: 15px;
-      }
-
-      button {
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
-
-    #typewriter {
-      font-family: 'Courier New', monospace;
-      border-right: 2px solid #333;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: blink-caret 0.7s step-end infinite;
-    }
-
-    @keyframes blink-caret {
-      50% {
-        border-color: transparent;
-      }
-    }
   </style>
 </head>
 <body>
-  <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+  <header>
+    <h1>Welcome to Lili's Portfolio 💻✨</h1>
+  </header>
 
   <nav>
-    <button class="tab-button" onclick="showTab('home')">🏠 Home</button>
-    <button class="tab-button" onclick="showTab('projects')">🛠 Projects</button>
-    <button class="tab-button" onclick="showTab('about')">👩‍💻 About</button>
-    <button class="tab-button" onclick="showTab('contact')">📬 Contact</button>
+    <button onclick="showTab('about')">About Me</button>
+    <button onclick="showTab('projects')">Projects</button>
+    <button onclick="showTab('contact')">Contact Me</button>
+    <button onclick="showTab('quiz')">Quiz Game</button>
   </nav>
 
-  <div id="home" class="tab-content">
-    <h1>Hello, I'm Lili 👋</h1>
-    <p>Welcome to my portfolio site!</p>
-  </div>
+  <section id="about" class="tab-content active">
+    <h2>About Me</h2>
+    <p>Hi! I'm Lili — a curious and creative mind learning web development. I have a background in health sciences and a passion for technology.</p>
+  </section>
 
-  <div id="projects" class="tab-content">
+  <section id="projects" class="tab-content">
     <h2>My Projects</h2>
     <div class="gallery">
       <div class="project">
@@ -243,53 +135,55 @@
         <p>More exciting projects are on the way ✨</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div id="about" class="tab-content">
-    <h2>About Me</h2>
-    <p id="typewriter"></p>
-  </div>
-
-  <div id="contact" class="tab-content">
+  <section id="contact" class="tab-content">
     <h2>Contact Me</h2>
-    <form class="contact-form">
+    <form class="contact-form" onsubmit="submitForm(event)">
       <label for="name">Name</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" name="name" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" name="email" required>
 
       <label for="message">Message</label>
-      <textarea id="message" rows="4" required></textarea>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
-      <button type="submit">Send</button>
+      <button type="submit">Send Message</button>
     </form>
-  </div>
+  </section>
+
+  <section id="quiz" class="tab-content">
+    <h2>Mini Quiz</h2>
+    <p>Which language is used for styling web pages?</p>
+    <button onclick="checkAnswer('HTML')">HTML</button>
+    <button onclick="checkAnswer('CSS')">CSS</button>
+    <button onclick="checkAnswer('JavaScript')">JavaScript</button>
+    <p id="quiz-result"></p>
+  </section>
 
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-    }
-
     function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.style.display = 'none');
-      document.getElementById(tabId).style.display = 'block';
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
     }
 
-    const txt = "Hi! I’m Lili — a curious and creative mind currently learning web development. I have a background in health sciences and a passion for technology 💻✨";
-    let i = 0;
-    function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("typewriter").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, 40);
+    function submitForm(event) {
+      event.preventDefault();
+      alert("Thank you for your message, " + document.getElementById('name').value + "! We'll be in touch soon.");
+    }
+
+    function checkAnswer(answer) {
+      const result = document.getElementById('quiz-result');
+      if (answer === 'CSS') {
+        result.textContent = "✅ Correct! CSS is used for styling.";
+        result.style.color = "green";
+      } else {
+        result.textContent = "❌ Oops! Try again.";
+        result.style.color = "red";
       }
-    }
-
-    window.onload = function() {
-      showTab('home');
-      typeWriter();
     }
   </script>
 </body>
