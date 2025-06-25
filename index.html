@@ -222,23 +222,21 @@
   <hr>
 
  <h2>Contact Me</h2>
-<form class="contact-form" action="https://formsubmit.co/lilifleurdelis@gmail.com" method="POST">
-  <!-- Disable CAPTCHA & redirect after submit -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://lilib-ux.github.io/thankyou.html">
-
+<form class="contact-form" action="https://formspree.io/f/xzzgkrlj" method="POST">
   <label for="name">Name</label><br>
   <input type="text" id="name" name="name" required><br><br>
 
   <label for="email">Email</label><br>
-  <input type="email" id="email" name="email" required><br><br>
+  <input type="email" id="email" name="_replyto" required><br><br>
 
   <label for="message">Message</label><br>
   <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
+  <!-- Optional: Redirect after submission -->
+  <input type="hidden" name="_redirect" value="thankyou.html">
+
   <button type="submit">Send Message</button>
 </form>
-
   <hr>
 
   <a href="https://www.google.com" target="_blank">Visit Google</a>
