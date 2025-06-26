@@ -5,6 +5,34 @@
   <title>My First Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+
+ .navbar {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  background-color: #ffe6f0;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  color: #b30059;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
     body {
       background-color: #f9f2ff;
       font-family: 'Arial', sans-serif;
@@ -186,6 +214,15 @@
 </head>
 <body>
   <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+ <nav>
+  <ul class="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
   <h1>Hello, I'm Lili 👋</h1>
 
