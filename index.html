@@ -4,7 +4,56 @@
   <title>My First Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    .navbar {
+.cta {
+  background-color: #ffe6f0;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 40px 0;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+}
+
+.cta h2 {
+  margin-bottom: 10px;
+  color: #b30059;
+}
+
+.cta p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #b30059;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #99004d;
+}
+.resume-link {
+  background-color: #b30059;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.resume-link:hover {
+  background-color: #99004d;
+}
+
+.resume-link:hover {
+  background-color: #99004d;
+}
+
+.resume-link:hover {
+  background-color: #99004d;
+}  .navbar {
       list-style: none;
       padding: 0;
       display: flex;
@@ -220,11 +269,10 @@
       <li><a href="projects.html">Projects</a></li>
       <li><a href="quiz.html">Quiz</a></li>
       <li><a href="#contact">Contact</a></li>
-    <li><a href="https://docs.google.com/document/d/1HeQzJ-qkHk0SkwsOfRb1cIsP5tYh3dvR_lsRHoJWYIA/edit?usp=sharing" target="_blank">Resume</a></li>
+<li><a class="resume-link" href="https://docs.google.com/document/d/1HeQzJ-qkHk0SkwsOfRb1cIsP5tYh3dvR_lsRHoJWYIA/edit?usp=sharing" target="_blank">📄 Resume</a></li>
     </ul>
   </nav>
-
-  <h1>Hello, I'm Lili 👋</h1>
+      <h1>Hello, I'm Lili 👋</h1>
 
   <h2>About Me</h2>
   <img src="https://placekitten.com/150/150" alt="Lili smiling" class="profile">
@@ -256,7 +304,16 @@
   </div>
 
   <hr>
+<hr>
 
+<hr>
+
+<section class="cta">
+  <h2>Let’s Work Together</h2>
+  <p>If you’re looking for a motivated, creative junior developer, I’d love to hear from you!<br>
+     Check out my projects, view my resume, or send me a message below 💌</p>
+  <a href="#contact" class="cta-button">Contact Me</a>
+</section>
   <h2 id="contact">Contact Me</h2>
   <form 
     action="https://formspree.io/f/xzzgkrlj" 
