@@ -220,20 +220,17 @@
   </div>
 
   <hr>
-
- <h2>Contact Me</h2>
 <form class="contact-form" action="https://formspree.io/f/xzzgkrlj" method="POST">
   <label for="name">Name</label><br>
   <input type="text" id="name" name="name" required><br><br>
 
   <label for="email">Email</label><br>
-  <input type="email" id="email" name="_replyto" required><br><br>
+  <input type="email" id="email" name="email" required><br><br>
 
   <label for="message">Message</label><br>
   <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
-  <!-- Optional: Redirect after submission -->
-  <input type="hidden" name="_redirect" value="thankyou.html">
+  <input type="hidden" name="_next" value="#thankyou">
 
   <button type="submit">Send Message</button>
 </form>
@@ -266,5 +263,19 @@
       document.getElementById("secret").style.display = "block";
     }
   </script>
+
+ <section id="thankyou" style="display: none; padding: 40px;">
+  <h2>Thank You!</h2>
+  <p>Your message has been sent. I’ll get back to you shortly 💌</p>
+  <a href="#top" style="color: #b30059; font-weight: bold;">⬆ Back to top</a>
+</section>
+
+<script>
+  // Show thank you section if redirected
+  if (window.location.hash === "#thankyou") {
+    document.querySelector("#thankyou").style.display = "block";
+    window.scrollTo(0, document.querySelector("#thankyou").offsetTop);
+  }
+</script>
 </body>
 </html>
